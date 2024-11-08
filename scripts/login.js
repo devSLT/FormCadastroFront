@@ -19,11 +19,19 @@ document.getElementById('form').addEventListener('submit', (event) => {
         },
         body: JSON.stringify(data)
     })
-        .then((res) => res.json())
+        .then((res) => {
+
+            if (!res.ok) {
+                throw new Error('Erro na resposta do servidor: ' + res.status);
+            }
+            return res.json();
+
+        })
         .then((data) => {
             console.log(data);
 
             alert(data.message)
+
         })
         .catch(error => {
             console.error('Erro:', error);
