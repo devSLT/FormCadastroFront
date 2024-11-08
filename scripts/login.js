@@ -5,7 +5,7 @@ document.getElementById('form').addEventListener('submit', (event) => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    const URL = 'http://localhost:8080/login';
+    const URL = 'https://formcadastroback.onrender.com/login';
 
     const data = {
         email,
